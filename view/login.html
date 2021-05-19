@@ -1,0 +1,19 @@
+{{define "login"}}
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+</head>
+<body>
+<form action="/login" method="POST">
+    {{if ne .ErrorMessage ""}}
+    <p>{{.ErrorMessage}}</p>
+    {{end}}
+    <p>ユーザー名</p>
+    <p><input type="text" name="user-name" value="{{.UserName}}"></p>
+    <p><input type="submit" value="ログイン"></p>
+</form>
+</body>
+</html>
+{{end}}
